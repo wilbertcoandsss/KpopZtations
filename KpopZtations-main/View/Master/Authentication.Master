@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Authentication.master.cs" Inherits="KpopZtations.View.Authentication" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>KpopZtations</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dPink: '#D80038',
+                        lPink: '#FFDDE6',
+                        dBlue: '#0F183E',
+                        lBlue: '#272E4B',
+                    }
+                }
+            }
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+       <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <nav class="navbar">
+        <ul class="navbar-list">
+            <asp:Panel ID="loginPanelGuest" runat="server" Visible='<%# ShowElementByGuest() %>'>
+                <asp:LinkButton runat="server" ID="homeBtn" OnClick="homeBtn_Click" CssClass="navbar-item">Home</asp:LinkButton>
+                <asp:LinkButton runat="server" ID="loginBtn" OnClick="loginBtn_Click" CssClass="navbar-item">Login</asp:LinkButton>
+                <asp:LinkButton runat="server" ID="registerBtn" OnClick="registerBtn_Click" CssClass="navbar-item">Register</asp:LinkButton>
+            </asp:Panel>            
+            <asp:Panel ID="loginPanelCustomer" runat="server" Visible='<%# ShowElementByCustomer() %>'>
+                <asp:LinkButton runat="server" OnClick="homeBtn_Click" CssClass="navbar-item">Home</asp:LinkButton>
+                <asp:LinkButton runat="server" ID="cartBtn" OnClick="cartBtn_Click" CssClass="navbar-item">Cart</asp:LinkButton>
+                <asp:LinkButton runat="server" ID="trHistoryBtn" OnClick="trHistoryBtn_Click" CssClass="navbar-item">Transaction History</asp:LinkButton>
+                <asp:LinkButton runat="server" ID="updateProfileBtn" OnClick="updateProfileBtn_Click" CssClass="navbar-item">Update Profile</asp:LinkButton>
+                <asp:LinkButton runat="server" ID="logout" OnClick="logout_Click" CssClass="navbar-item">Logout</asp:LinkButton>
+            </asp:Panel>            
+            <asp:Panel ID="loginPanelAdmin" runat="server" Visible='<%# ShowElementByAdmin() %>'>
+                <asp:LinkButton runat="server" OnClick="homeBtn_Click" CssClass="navbar-item">Home</asp:LinkButton>
+                <asp:LinkButton runat="server" ID="trReportBtn" OnClick="trReportBtn_Click" CssClass="navbar-item">Transaction Report</asp:LinkButton>
+                <asp:LinkButton runat="server" OnClick="updateProfileBtn_Click" CssClass="navbar-item">Update Profile</asp:LinkButton>
+                <asp:LinkButton runat="server" ID="LinkButton1" OnClick="logout_Click">Logout</asp:LinkButton>
+            </asp:Panel>
+        </ul>
+    </nav>
+
+    <div class="position-relative bg-image bg-no-repeat w-100" style="background-image: url('../Storage/Additional/background.jpg'); background-size: cover;"">
+      <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.5);"></div>
+          <div class="container">
+            <div class="container d-flex justify-content-center align-items-center vh-100">
+                <div class="card p-4 w-75 h-75 justify-content-center" style="background-color: rgba(255, 255, 255, 0.85);">
+
+                        <div class ="flex flex-col justify-center item-center">
+                            <asp:ContentPlaceHolder ID="AuthForm" runat="server">
+
+                            </asp:ContentPlaceHolder>
+                        </div>
+
+                </div>
+             </div>
+        </div>      
+    </div>
+    
+    <asp:ContentPlaceHolder ID="body" runat="server">
+
+    </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

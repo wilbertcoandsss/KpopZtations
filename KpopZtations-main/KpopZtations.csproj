@@ -1,0 +1,353 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9ADC5023-7932-4021-985C-9DBB57567581}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KpopZtations</RootNamespace>
+    <AssemblyName>KpopZtations</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44305</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Database.mdf" />
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Database_log.ldf">
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
+    <Content Include="Model\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Style\Home.css" />
+    <Content Include="Style\Cart.css" />
+    <Content Include="Style\Navbar.css" />
+    <Content Include="View\AlbumDetailsPage.aspx" />
+    <Content Include="View\ArtistsDetailsPage.aspx" />
+    <Content Include="View\CartPage.aspx" />
+    <Content Include="View\DeleteArtistPage.aspx" />
+    <Content Include="View\InsertAlbumPage.aspx" />
+    <Content Include="View\InsertArtistPage.aspx" />
+    <Content Include="View\Login.aspx" />
+    <Content Include="View\Register.aspx" />
+    <Content Include="View\Home.aspx" />
+    <Content Include="View\DeleteAlbumsPage.aspx" />
+    <Content Include="View\RemoveCartItems.aspx" />
+    <Content Include="View\TransactionDetailPage.aspx" />
+    <Content Include="View\TransactionHistoryPage.aspx" />
+    <Content Include="View\UpdateAlbumsPage.aspx" />
+    <Content Include="View\UpdateArtistPage.aspx" />
+    <Content Include="View\UpdateProfilePage.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\AlbumController.cs" />
+    <Compile Include="Controller\ArtistController.cs" />
+    <Compile Include="Controller\CartController.cs" />
+    <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="Controller\TransactionDetailController.cs" />
+    <Compile Include="Controller\TransactionHeaderController.cs" />
+    <Compile Include="Factory\AlbumFactory.cs" />
+    <Compile Include="Factory\ArtistFactory.cs" />
+    <Compile Include="Factory\CartFactory.cs" />
+    <Compile Include="Factory\CustomerFactory.cs" />
+    <Compile Include="Factory\TransactionDetailFactory.cs" />
+    <Compile Include="Factory\TransactionHeaderFactory.cs" />
+    <Compile Include="Handler\AlbumHandler.cs" />
+    <Compile Include="Handler\AlbumRepositories.cs" />
+    <Compile Include="Handler\ArtistHandler.cs" />
+    <Compile Include="Handler\CartHandler.cs" />
+    <Compile Include="Handler\CustomerHandler.cs" />
+    <Compile Include="Handler\TransactionDetailHandler.cs" />
+    <Compile Include="Handler\TransactionHeaderHandler.cs" />
+    <Compile Include="Model\Album.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Artist.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Cart.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Customer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TransactionDetail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TransactionHeader.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AlbumRepository.cs" />
+    <Compile Include="Repository\ArtistRepository.cs" />
+    <Compile Include="Repository\CartRepository.cs" />
+    <Compile Include="Repository\CustomerRepository.cs" />
+    <Compile Include="Repository\TransactionDetailRepository.cs" />
+    <Compile Include="Repository\TransactionHeaderRepository.cs" />
+    <Compile Include="Singleton\DatabaseSingleton.cs" />
+    <Compile Include="View\AlbumDetailsPage.aspx.cs">
+      <DependentUpon>AlbumDetailsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\AlbumDetailsPage.aspx.designer.cs">
+      <DependentUpon>AlbumDetailsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ArtistsDetailsPage.aspx.cs">
+      <DependentUpon>ArtistsDetailsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ArtistsDetailsPage.aspx.designer.cs">
+      <DependentUpon>ArtistsDetailsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\CartPage.aspx.cs">
+      <DependentUpon>CartPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\CartPage.aspx.designer.cs">
+      <DependentUpon>CartPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DeleteArtistPage.aspx.cs">
+      <DependentUpon>DeleteArtistPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DeleteArtistPage.aspx.designer.cs">
+      <DependentUpon>DeleteArtistPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\InsertAlbumPage.aspx.cs">
+      <DependentUpon>InsertAlbumPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\InsertAlbumPage.aspx.designer.cs">
+      <DependentUpon>InsertAlbumPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\InsertArtistPage.aspx.cs">
+      <DependentUpon>InsertArtistPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\InsertArtistPage.aspx.designer.cs">
+      <DependentUpon>InsertArtistPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Master\Authentication.Master.cs">
+      <DependentUpon>Authentication.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Master\Authentication.Master.designer.cs">
+      <DependentUpon>Authentication.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DeleteAlbumsPage.aspx.cs">
+      <DependentUpon>DeleteAlbumsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DeleteAlbumsPage.aspx.designer.cs">
+      <DependentUpon>DeleteAlbumsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\RemoveCartItems.aspx.cs">
+      <DependentUpon>RemoveCartItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\RemoveCartItems.aspx.designer.cs">
+      <DependentUpon>RemoveCartItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TransactionDetailPage.aspx.cs">
+      <DependentUpon>TransactionDetailPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TransactionDetailPage.aspx.designer.cs">
+      <DependentUpon>TransactionDetailPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TransactionHistoryPage.aspx.cs">
+      <DependentUpon>TransactionHistoryPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TransactionHistoryPage.aspx.designer.cs">
+      <DependentUpon>TransactionHistoryPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateAlbumsPage.aspx.cs">
+      <DependentUpon>UpdateAlbumsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UpdateAlbumsPage.aspx.designer.cs">
+      <DependentUpon>UpdateAlbumsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateArtistPage.aspx.cs">
+      <DependentUpon>UpdateArtistPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UpdateArtistPage.aspx.designer.cs">
+      <DependentUpon>UpdateArtistPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateProfilePage.aspx.cs">
+      <DependentUpon>UpdateProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UpdateProfilePage.aspx.designer.cs">
+      <DependentUpon>UpdateProfilePage.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Model\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="View\Master\Authentication.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Storage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61744</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44305/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

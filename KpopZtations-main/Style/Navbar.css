@@ -1,0 +1,28 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body, h1 {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+}
+
+.navbar {
+    background-color: white;
+    padding: 10px;
+    color: red;
+}
+
+.navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-item {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.navbar-item a {
+        color: red;
+        text-decoration: none;
+}
